@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Call</title>
+<meta name="description" content="A vision for the narrow road: households gathered, disciples made, God worshiped openly.">
+<meta name="theme-color" content="#2f5d46">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="The Call">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: a single narrow reading column, like a field journal; two views (Vision / My Part) switched by a sticky tab bar. */
+:root {
+  --bg: #f5f7f4;
+  --surface: #ffffff;
+  --fg: #1d2620;
+  --muted: #5a675e;
+  --line: #d9e0da;
+  --accent: #2f5d46;
+  --accent-soft: #e3ece6;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131915; --surface: #1b231e; --fg: #e4ebe5; --muted: #9aa89e;
+    --line: #2c3730; --accent: #8cc4a4; --accent-soft: #223029; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131915; --surface: #1b231e; --fg: #e4ebe5; --muted: #9aa89e;
+  --line: #2c3730; --accent: #8cc4a4; --accent-soft: #223029; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--body); font-size: 17px; line-height: 1.6;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 680px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+header.top { padding-block: 2.5rem 1.25rem; }
+.eyebrow {
+  font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+h1 {
+  font-family: var(--display); font-weight: 700; font-size: clamp(2.4rem, 8vw, 3.4rem);
+  line-height: 1.05; margin: 0.35rem 0 0.75rem; text-wrap: balance; color: var(--accent);
+}
+.lede { color: var(--muted); margin: 0; max-width: 34em; }
+
+nav.tabs {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+nav.tabs .wrap { display: flex; gap: 0.25rem; }
+nav.tabs a {
+  padding: 0.85rem 0.9rem; text-decoration: none; color: var(--muted);
+  font-weight: 600; border-bottom: 3px solid transparent; margin-bottom: -1px;
+}
+nav.tabs a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+nav.tabs a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+main { padding-block: 1.5rem 4rem; }
+section { margin-bottom: 2.75rem; }
+h2 {
+  font-family: var(--display); font-weight: 500; font-size: 1.6rem;
+  margin: 0 0 0.25rem; text-wrap: balance;
+}
+.sub { color: var(--muted); margin: 0 0 1.1rem; }
+ul.items { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+ul.items li { padding-left: 1rem; border-left: 2px solid var(--line); }
+ul.items strong { display: block; color: var(--fg); }
+ul.items span { color: var(--muted); }
+.ref { color: var(--accent); font-size: 0.9em; white-space: nowrap; }
+
+.longing { display: grid; gap: 0.6rem; margin: 0; padding: 0; list-style: none; }
+.longing li { font-family: var(--display); font-size: 1.15rem; }
+.longing em { font-style: normal; color: var(--muted); }
+
+blockquote {
+  margin: 2rem 0 0; padding: 1.25rem 1.25rem; background: var(--accent-soft);
+  border-radius: 6px; font-family: var(--display); font-size: 1.15rem;
+}
+blockquote cite { display: block; margin-top: 0.5rem; font-family: var(--body); font-size: 0.85rem; font-style: normal; color: var(--muted); }
+
+ol.steps { padding-left: 1.3rem; margin: 0; display: grid; gap: 0.75rem; }
+ol.steps li::marker { color: var(--accent); font-weight: 600; }
+.note { font-size: 0.95rem; color: var(--muted); }
+footer { color: var(--muted); font-size: 0.85rem; padding-block: 0 3rem; }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">A vision for the narrow road</div>
+    <h1>The Call</h1>
+    <p class="lede">Households gathered, disciples made, God worshiped openly. What I long to see, where we are now, and the part I'm called to play.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap">
+    <a href="#vision" id="tab-vision">Vision</a>
+    <a href="#my-part" id="tab-my-part">My Part</a>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <div id="view-vision">
+      <section>
+        <h2>The dream</h2>
+        <p class="sub">Every American who is to be saved, walking the narrow road God has given and worshiping Him wholeheartedly. <span class="ref">Matthew 7:14</span></p>
+        <ul class="items">
+          <li><strong>Vibrant families</strong><span>Homes full of character, love, sacrifice and diligence.</span></li>
+          <li><strong>Gathered households</strong><span>Households gathered together so parents can raise healthy children who love and worship God.</span> <span class="ref">Deuteronomy 6:6–7</span></li>
+          <li><strong>Sent outward</strong><span>Families reaching people overseas too, leading them to saving faith in and knowledge of Jesus Christ.</span> <span class="ref">Matthew 28:19–20</span></li>
+          <li><strong>Mature, shepherd-hearted people</strong><span>Self-sacrificing, well off, caring well for their own families and deeply caring for others. Leo is the picture of this.</span> <span class="ref">1 Peter 5:2–3</span></li>
+          <li><strong>Tenacious</strong><span>Able to endure hardship and persecution without shrinking back.</span> <span class="ref">2 Timothy 3:12</span></li>
+          <li><strong>A united church</strong><span>Believers standing together as Protestants on one front.</span> <span class="ref">John 17:21</span></li>
+          <li><strong>Love without division</strong><span>Today's confused ideologies gone, and people simply loving one another in Christ.</span> <span class="ref">John 13:35</span></li>
+          <li><strong>Public worship</strong><span>God worshiped and glorified openly, in public spaces.</span></li>
+          <li><strong>A fragrance to the Lord</strong><span>Lives that rise to God as a pleasing aroma.</span> <span class="ref">Ephesians 5:2</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>The gap</h2>
+        <p class="sub">Where we are now.</p>
+        <ul class="items">
+          <li><strong>Quiet, comfortable, selfish lives</strong><span>Many people live for themselves and rarely think about others.</span></li>
+          <li><strong>Theologically shallow</strong><span>People adopt whatever someone with a microphone says instead of studying the Word themselves. Institutions say "study for yourself" but rarely equip people to do it.</span> <span class="ref">Acts 17:11</span></li>
+          <li><strong>Formed by nonsense</strong><span>Shaped by empty and false ideas rather than by Christ.</span></li>
+          <li><strong>Not growing up</strong><span>Fewer people becoming Christlike, honorable men and women.</span></li>
+          <li><strong>Hunkered down</strong><span>Fear, anxiety and self-protection instead of courage and sacrifice.</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>The longing</h2>
+        <ul class="longing">
+          <li><em>From</em> fearful and comfortable <em>to</em> bold and self-giving.</li>
+          <li><em>From</em> formed by the culture <em>to</em> formed by Christ.</li>
+          <li><em>From</em> borrowed opinions <em>to</em> knowing the Word for themselves.</li>
+          <li><em>From</em> scattered believers <em>to</em> gathered households and a united church.</li>
+          <li><em>From</em> private faith <em>to</em> public worship.</li>
+          <li><em>From</em> self <em>to</em> others, and from the neighborhood <em>to</em> the nations.</li>
+        </ul>
+        <blockquote>
+          For we are to God the pleasing aroma of Christ among those who are being saved and those who are perishing.
+          <cite>2 Corinthians 2:15</cite>
+        </blockquote>
+      </section>
+    </div>
+
+    <div id="view-my-part" hidden>
+      <section>
+        <h2>What I bring</h2>
+        <ul class="items">
+          <li><strong>Prayer</strong><span>I can pray.</span></li>
+          <li><strong>Making disciples</strong><span>I can meet with people and invest in them.</span></li>
+          <li><strong>Teaching</strong><span>I can teach people.</span></li>
+          <li><strong>Technology</strong><span>I can use technology to help people.</span></li>
+          <li><strong>Management</strong><span>I have managerial abilities.</span></li>
+          <li><strong>Social media connections</strong><span>For some reason, God has put me among these connections.</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Where I need to grow</h2>
+        <ul class="items">
+          <li><strong>Next steps</strong><span>After meeting with someone, I'm not clear how to help them take a next step.</span></li>
+          <li><strong>Keeping people</strong><span>I can teach, but people don't stay connected.</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Convictions</h2>
+        <ul class="items">
+          <li><strong>Shepherd, not itinerant speaker</strong><span>I want my own disciples, to shepherd and care for people myself: hands-on, on the ground, going after revival.</span></li>
+          <li><strong>Keep studying</strong><span>Even with a master's, keep studying and growing.</span></li>
+          <li><strong>Accountability matters</strong><span>House churches can be too loose, removing people from accountability and letting the ungrounded lead others.</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Social media ministry</h2>
+        <p class="sub">A vehicle, not the destination. Two things to settle first:</p>
+        <ol class="steps">
+          <li><strong>Purity.</strong> Prepared and above reproach before taking on a public platform. <span class="ref">1 Timothy 4:12</span></li>
+          <li><strong>Overseas?</strong> Whether God is calling me to go overseas or not.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Open questions</h2>
+        <ul class="items">
+          <li><span>How does an online platform feed into real, local, accountable discipleship rather than replacing it?</span></li>
+          <li><span>What simple path can I walk someone through, from first meeting to maturity to making disciples themselves?</span></li>
+        </ul>
+      </section>
+    </div>
+
+  </div>
+</main>
+
+<footer><div class="wrap">Tip: open this on your phone and choose "Add to Home Screen" to keep it like an app.</div></footer>
+
+<script>
+(function () {
+  var views = ["vision", "my-part"];
+  function show() {
+    var h = (location.hash || "").slice(1);
+    if (views.indexOf(h) === -1) h = "vision";
+    views.forEach(function (v) {
+      document.getElementById("view-" + v).hidden = v !== h;
+      var t = document.getElementById("tab-" + v);
+      if (v === h) t.setAttribute("aria-current", "page"); else t.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("hashchange", function () { show(); window.scrollTo(0, 0); });
+  show();
+})();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js"); });
+}
+</script>
+</body>
+</html>
